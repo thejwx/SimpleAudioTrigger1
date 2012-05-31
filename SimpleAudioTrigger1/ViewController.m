@@ -10,6 +10,8 @@
 
 @implementation ViewController
 
+@synthesize audioEffect;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -29,6 +31,16 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+
+    // ADDED RELEASE
+    AudioServicesDisposeSystemSoundID(audioEffect);
+}
+
+- (void)dealloc
+{
+    // ADDED RELEASE
+    AudioServicesDisposeSystemSoundID(audioEffect);
+    [super dealloc];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,4 +69,24 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+#pragma mark - Audio additions
+// DON'T FORGET TO ADD #import <AudioToolbox/AudioToolbox.h> in header file and specify AudioToolbox/AudioToolbox.h IN "Build Phase" tab
+- (IBAction)play:(id)sender {
+    [self playSound:@"cough" ext:@"mp3"];
+}
+
+- (void) playSound:(NSString *)fName ext:(NSString *)ext {
+    NSString *path  = [[NSBundle mainBundle] pathForResource:fName ofType:ext];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &audioEffect);
+        AudioServicesPlaySystemSound(audioEffect);
+    }
+    else
+    {
+        NSLog(@"error, file not found: %@", path);
+    }
+}
 @end

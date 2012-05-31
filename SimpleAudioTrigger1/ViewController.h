@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController : UIViewController
+
+@property SystemSoundID audioEffect;
+
+- (IBAction)play:(id)sender;
+- (void) playSound:(NSString *)fName ext:(NSString *)ext;
 
 @end

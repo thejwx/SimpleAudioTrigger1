@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4CD7FC1577FCA800D9B871 /* cough.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F4CD7FB1577FCA800D9B871 /* cough.mp3 */; };
+		7F615FE01577F3A3000ED4C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F615FDF1577F3A3000ED4C8 /* AudioToolbox.framework */; };
 		7F8EC7931577EEA50034B0E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8EC7921577EEA50034B0E9 /* UIKit.framework */; };
 		7F8EC7951577EEA50034B0E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8EC7941577EEA50034B0E9 /* Foundation.framework */; };
 		7F8EC7971577EEA50034B0E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8EC7961577EEA50034B0E9 /* CoreGraphics.framework */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F4CD7FB1577FCA800D9B871 /* cough.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cough.mp3; sourceTree = "<group>"; };
+		7F615FDF1577F3A3000ED4C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7F8EC78E1577EEA50034B0E9 /* SimpleAudioTrigger1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAudioTrigger1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8EC7921577EEA50034B0E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7F8EC7941577EEA50034B0E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F615FE01577F3A3000ED4C8 /* AudioToolbox.framework in Frameworks */,
 				7F8EC7931577EEA50034B0E9 /* UIKit.framework in Frameworks */,
 				7F8EC7951577EEA50034B0E9 /* Foundation.framework in Frameworks */,
 				7F8EC7971577EEA50034B0E9 /* CoreGraphics.framework in Frameworks */,
@@ -47,9 +52,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F4CD7FE1577FCAD00D9B871 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				7F4CD7FB1577FCA800D9B871 /* cough.mp3 */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		7F8EC7831577EEA30034B0E9 = {
 			isa = PBXGroup;
 			children = (
+				7F615FDF1577F3A3000ED4C8 /* AudioToolbox.framework */,
 				7F8EC7981577EEA50034B0E9 /* SimpleAudioTrigger1 */,
 				7F8EC7911577EEA50034B0E9 /* Frameworks */,
 				7F8EC78F1577EEA50034B0E9 /* Products */,
@@ -90,6 +104,7 @@
 		7F8EC7991577EEA50034B0E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F4CD7FE1577FCAD00D9B871 /* Audio */,
 				7F8EC79A1577EEA50034B0E9 /* SimpleAudioTrigger1-Info.plist */,
 				7F8EC79B1577EEA50034B0E9 /* InfoPlist.strings */,
 				7F8EC79E1577EEA50034B0E9 /* main.m */,
@@ -150,6 +165,7 @@
 			files = (
 				7F8EC79D1577EEA50034B0E9 /* InfoPlist.strings in Resources */,
 				7F8EC7A91577EEA50034B0E9 /* ViewController.xib in Resources */,
+				7F4CD7FC1577FCA800D9B871 /* cough.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
