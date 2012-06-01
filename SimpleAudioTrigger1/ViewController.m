@@ -11,6 +11,7 @@
 @implementation ViewController
 
 @synthesize audioEffect;
+@synthesize viewController = _viewController;
 
 - (void)didReceiveMemoryWarning
 {
@@ -74,6 +75,14 @@
 // DON'T FORGET TO ADD #import <AudioToolbox/AudioToolbox.h> in header file and specify AudioToolbox/AudioToolbox.h IN "Build Phase" tab
 - (IBAction)play:(id)sender {
     [self playSound:@"cough" ext:@"mp3"];
+}
+
+- (IBAction)playOnPageSlide:(id)sender {
+    [self playSound:@"swoosh" ext:@"mp3"];
+    if (!self.viewController) {
+        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    }
+    [self.navigationController pushViewController:self.viewController animated:YES];
 }
 
 - (void) playSound:(NSString *)fName ext:(NSString *)ext {

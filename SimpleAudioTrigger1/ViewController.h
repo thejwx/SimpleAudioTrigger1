@@ -12,8 +12,10 @@
 @interface ViewController : UIViewController
 
 @property SystemSoundID audioEffect;
+@property (strong, nonatomic) ViewController *viewController;
 
 - (IBAction)play:(id)sender;
+- (IBAction)playOnPageSlide:(id)sender;
 - (void) playSound:(NSString *)fName ext:(NSString *)ext;
 
 @end
